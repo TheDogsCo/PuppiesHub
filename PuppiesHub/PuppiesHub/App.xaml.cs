@@ -19,12 +19,17 @@ namespace PuppiesHub
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync("HomePage");
+            NavigationService.NavigateAsync("MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<MainPage>("MainPage");
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>("LoginPage");
+            containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>("RegisterPage");
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>("HomePage");
+            containerRegistry.RegisterForNavigation<WishlistPage, WishlistPageViewModel>("WishlistPage");
+            containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>("ProfilePage");
         }
 
 
