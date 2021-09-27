@@ -1,28 +1,32 @@
-﻿using System;
+﻿using Prism;
+using Prism.Ioc;
+using Prism.Unity;
+using PuppiesHub.ViewModels;
+using PuppiesHub.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace PuppiesHub
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
+        public App(IPlatformInitializer platformInitializer): base(platformInitializer)
+        {
+
+        }
+
+        protected override void OnInitialized()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            NavigationService.NavigateAsync("HomePage");
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>("HomePage");
         }
 
-        protected override void OnSleep()
-        {
-        }
 
-        protected override void OnResume()
-        {
-        }
     }
 }
