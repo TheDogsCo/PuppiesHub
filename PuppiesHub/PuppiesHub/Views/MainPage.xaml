@@ -12,12 +12,12 @@
     </NavigationPage>
     <NavigationPage Title="Wishlist">
         <x:Arguments>
-            <local:HomePage />
+            <local:WishlistPage />
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="Profile">
         <x:Arguments>
-            <local:HomePage />
+            <local:ProfilePage />
         </x:Arguments>
     </NavigationPage>
 </TabbedPage>

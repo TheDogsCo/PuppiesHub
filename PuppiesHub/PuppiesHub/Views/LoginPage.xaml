@@ -7,6 +7,7 @@
             <Label Text="Login"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button Command="{Binding RegisterCommand}" Text="Register" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
