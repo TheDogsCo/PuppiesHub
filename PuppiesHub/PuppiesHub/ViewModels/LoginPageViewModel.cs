@@ -10,7 +10,7 @@ namespace PuppiesHub.ViewModels
     class LoginPageViewModel : BaseViewModel
     {
         public ICommand RegisterCommand { get; }
-        private async void OnRegister() => await _navigationService.NavigateAsync("RegisterPage");
+        private async void OnRegister() => await _navigationService.NavigateAsync(NavigationConstants.Paths.Register);
 
         INavigationService _navigationService;
 
