@@ -9,7 +9,7 @@ namespace PuppiesHub.Services
 {
     interface ITheDogsApi
     {
-        [Get("/v1/images/search")]
+        [Get(ConfigurationConstants.Urls.Search)]
         Task<List<Dog>> GetRandomDog();
     }
 }

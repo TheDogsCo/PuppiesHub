@@ -11,7 +11,7 @@ namespace PuppiesHub.Services
     {
         public Task<List<Dog>> GetRandomDog()
         {
-            var theDogAPI = RestService.For<ITheDogsApi>("https://api.thedogapi.com");
+            var theDogAPI = RestService.For<ITheDogsApi>(ConfigurationConstants.Urls.Domain);
             return theDogAPI.GetRandomDog();
         }
     }
