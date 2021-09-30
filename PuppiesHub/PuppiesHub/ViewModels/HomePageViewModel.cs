@@ -1,4 +1,5 @@
 ﻿using Prism.Navigation;
+using Prism.Services;
 using PuppiesHub.Models;
 using PuppiesHub.Services;
 using System;
@@ -14,7 +15,8 @@ namespace PuppiesHub.ViewModels
     {
         public ICommand RequestDogCommand { get; }
         public Dog RandomDog { get; set; }
-        private ITheDogsApi _theDogsApi = new TheDogsApi();
+        ITheDogsApi _theDogsApi;
+        IPageDialogService _pageDialog;
 
         async void OnRequestDog()
         {
@@ -26,12 +28,14 @@ namespace PuppiesHub.ViewModels
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("Alert", "No Internet Connection.", "Ok");
+                await _pageDialog.DisplayAlertAsync("Alert", "No Internet Connection.", "Ok");
             }
         }
 
-        public HomePageViewModel()
+        public HomePageViewModel(IPageDialogService pageDialog)
         {
+            _pageDialog = pageDialog;
+            _theDogsApi = new TheDogsApi();
             RequestDogCommand = new Command(OnRequestDog);
         }
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PuppiesHub.Services
 {
-    class TheDogsApi : ITheDogsApi
+    public class TheDogsApi : ITheDogsApi
     {
         public Task<List<Dog>> GetRandomDog()
         {
