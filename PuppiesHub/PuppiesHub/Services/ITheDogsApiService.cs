@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PuppiesHub.Services
 {
-    public interface ITheDogsApi
+    public interface ITheDogsApiService
     {
         [Get(ConfigurationConstants.Urls.Search)]
         Task<List<Dog>> GetRandomDog();

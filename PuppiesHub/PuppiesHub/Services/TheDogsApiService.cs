@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace PuppiesHub.Services
 {
-    public class TheDogsApi : ITheDogsApi
+    public class TheDogsApiService : ITheDogsApiService
     {
         public Task<List<Dog>> GetRandomDog()
         {
-            var theDogAPI = RestService.For<ITheDogsApi>(ConfigurationConstants.Urls.Domain);
+            var theDogAPI = RestService.For<ITheDogsApiService>(ConfigurationConstants.Urls.Domain);
             return theDogAPI.GetRandomDog();
         }
     }

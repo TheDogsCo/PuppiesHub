@@ -15,7 +15,7 @@ namespace PuppiesHub.ViewModels
     {
         public ICommand RequestDogCommand { get; }
         public Dog RandomDog { get; set; }
-        ITheDogsApi _theDogsApi;
+        ITheDogsApiService _theDogsApiService;
         IPageDialogService _pageDialog;
 
         async void OnRequestDog()
@@ -23,7 +23,7 @@ namespace PuppiesHub.ViewModels
             var current = Connectivity.NetworkAccess;
             if (current == NetworkAccess.Internet)
             {
-                var dogs = await _theDogsApi.GetRandomDog();
+                var dogs = await _theDogsApiService.GetRandomDog();
                 RandomDog = dogs[0];
             }
             else
@@ -32,10 +32,10 @@ namespace PuppiesHub.ViewModels
             }
         }
 
-        public HomePageViewModel(IPageDialogService pageDialog)
+        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService)
         {
             _pageDialog = pageDialog;
-            _theDogsApi = new TheDogsApi();
+            _theDogsApiService = theDogsApiService;
             RequestDogCommand = new Command(OnRequestDog);
         }
     }
