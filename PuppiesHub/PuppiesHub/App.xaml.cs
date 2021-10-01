@@ -24,6 +24,7 @@ namespace PuppiesHub
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>(NavigationConstants.Paths.MainPage);
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>(NavigationConstants.Paths.Login);
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>(NavigationConstants.Paths.Register);

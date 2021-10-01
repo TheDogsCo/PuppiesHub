@@ -1,5 +1,4 @@
 ﻿using Prism.Navigation;
-using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
@@ -10,7 +9,7 @@ namespace PuppiesHub.ViewModels
     class ProfilePageViewModel: BaseViewModel
     {
         public ICommand LogoutCommand { get; }
-        private async void OnLogout() => await _navigationService.NavigateAsync(NavigationConstants.Paths.Profile);
+        private async void OnLogout() => await _navigationService.NavigateAsync("/NavigationPage/" + NavigationConstants.Paths.Login);
 
         INavigationService _navigationService;
 
