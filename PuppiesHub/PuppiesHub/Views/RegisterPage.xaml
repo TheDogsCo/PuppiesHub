@@ -13,7 +13,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="01" FontSize="Large">Puppies Hub</Label>
+            <Label Grid.Row="01" Style="{StaticResource LogoTextStyle}">Puppies Hub</Label>
             <StackLayout Grid.Row="2" Padding="30,20">
 
                 <Entry

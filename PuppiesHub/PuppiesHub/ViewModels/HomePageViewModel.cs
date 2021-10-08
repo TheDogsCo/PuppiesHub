@@ -14,6 +14,7 @@ namespace PuppiesHub.ViewModels
     public class HomePageViewModel: BaseViewModel
     {
         public ICommand RequestDogCommand { get; }
+        public ICommand CopyDogUrlCommand { get; }
         public Dog RandomDog { get; set; }
         ITheDogsApiService _theDogsApiService;
         IPageDialogService _pageDialog;
@@ -23,7 +24,12 @@ namespace PuppiesHub.ViewModels
             var current = Connectivity.NetworkAccess;
             if (current == NetworkAccess.Internet)
             {
-                var dogs = await _theDogsApiService.GetRandomDog();
+                List<Dog> dogs;
+                do
+                {
+                    dogs = await _theDogsApiService.GetRandomDog();
+                } while (dogs[0].Breeds.Count == 0);
+
                 RandomDog = dogs[0];
             }
             else
@@ -32,11 +38,17 @@ namespace PuppiesHub.ViewModels
             }
         }
 
+        async void OnCopyDogImageUrl()
+        {
+            await Clipboard.SetTextAsync(RandomDog.Url);
+        }
+
         public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService)
         {
             _pageDialog = pageDialog;
             _theDogsApiService = theDogsApiService;
             RequestDogCommand = new Command(OnRequestDog);
+            CopyDogUrlCommand = new Command(OnCopyDogImageUrl);
         }
     }
 }

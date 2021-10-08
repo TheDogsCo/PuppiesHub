@@ -4,12 +4,18 @@
              x:Class="PuppiesHub.Views.HomePage">
 
     <StackLayout>
-        <Label Text="Puppies Hub" FontSize="Title" HorizontalTextAlignment="Center" Padding="20"/>
+        <Label Text="Puppies Hub" Style="{StaticResource LogoTextStyle}"/>
         <Button Command="{Binding RequestDogCommand}" Text="New Dog" BackgroundColor="Coral" />
-        <Image Source="{Binding RandomDog.Url}" />
-        <Label Text="{Binding RandomDog.Breeds[0].Name}" FontSize="20" HorizontalTextAlignment="Center" FontAttributes="Bold"  />
+        <Image Source="{Binding RandomDog.Url}" HeightRequest="300" />
+        <Label Text="{Binding RandomDog.Breeds[0].Name}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"  />
         <Label Text="{Binding RandomDog.Breeds[0].LifeSpan}" FontSize="16" HorizontalTextAlignment="Center" />
-        <Label Text="{Binding RandomDog.Breeds[0].Temperament}" HorizontalTextAlignment="Center" />
+        <Label Text="{Binding RandomDog.Breeds[0].BreedGroup}" FontSize="16" HorizontalTextAlignment="Center" />
+        <Label Text="{Binding RandomDog.Breeds[0].Temperament}" FontSize="16" HorizontalTextAlignment="Center" />
+
+        <StackLayout Orientation="Horizontal" Margin="20">
+            <Button Text="Copy Image" Command="{Binding CopyDogUrlCommand}" />
+            <Button Text="Add to Wishlist" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

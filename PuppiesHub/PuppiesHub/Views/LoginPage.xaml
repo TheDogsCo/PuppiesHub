@@ -15,7 +15,7 @@
             </Grid.RowDefinitions>
 
             <Image Grid.Row="0" Source="doglogo" />
-            <Label Grid.Row="01" FontSize="Large">Puppies Hub</Label>
+            <Label Grid.Row="01" Style="{StaticResource LogoTextStyle}">Puppies Hub</Label>
             <StackLayout Grid.Row="2" Padding="30,20">
 
                 <Entry
