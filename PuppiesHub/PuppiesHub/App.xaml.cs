@@ -22,7 +22,7 @@ namespace PuppiesHub
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync(NavigationConstants.Paths.MainPage);
+            NavigationService.NavigateAsync(NavigationConstants.Paths.Login);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

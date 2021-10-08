@@ -1,14 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PuppiesHub.Views.LoginPage">
+<ContentPage
+    x:Class="PuppiesHub.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Login"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Command="{Binding LoginCommand}" Text="Login" />
-            <Button Command="{Binding RegisterCommand}" Text="Register" />
-        </StackLayout>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="doglogo" />
+            <Label Grid.Row="01" FontSize="Large">Puppies Hub</Label>
+                <StackLayout Grid.Row="2" Padding="30,20">
+
+                <Entry
+                    x:Name="UsernameEntry"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="User"
+                    Text="{Binding Username}" />
+
+                <Entry
+                    x:Name="PasswordEntry"
+                    HorizontalOptions="FillAndExpand"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    Text="{Binding Password}" />
+
+
+                <Button Command="{Binding LoginCommand}" Text="Login" />
+
+                <Button Command="{Binding RegisterCommand}" Text="Register" />
+
+
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

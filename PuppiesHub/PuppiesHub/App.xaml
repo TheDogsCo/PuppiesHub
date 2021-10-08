@@ -1,9 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             x:Class="PuppiesHub.App">
+<prism:PrismApplication
+    x:Class="PuppiesHub.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com">
     <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="OptionStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Padding" Value="0, 20, 0, 20" />
 
+            </Style>
+            <Style TargetType="Grid">
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="ColumnSpacing" Value="20" />
+                <Setter Property="RowSpacing" Value="35" />
+            </Style>
+            <Style x:Key="BarStyle" TargetType="TabbedPage">
+                <Setter Property="BarBackgroundColor" Value="DarkOrange" />
+                <Setter Property="BarTextColor" Value="Black" />
+
+            </Style>
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="FloralWhite" />
+            </Style>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="FloralWhite" />
+
+            </Style>
+
+
+        </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>
