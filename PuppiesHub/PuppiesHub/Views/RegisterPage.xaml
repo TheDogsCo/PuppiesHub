@@ -1,12 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PuppiesHub.Views.RegisterPage">
+<ContentPage
+    x:Class="PuppiesHub.Views.RegisterPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Register"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="01" FontSize="Large">Puppies Hub</Label>
+            <StackLayout Grid.Row="2" Padding="30,20">
+
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="User"
+                    Text="{Binding Username}" />
+
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    Text="{Binding Password}" />
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    IsPassword="True"
+                    Placeholder="Confirm Password"
+                    Text="{Binding Password}" />
+
+
+                <Button Command="{Binding RegisterCommand}" Text="Register" />
+
+
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

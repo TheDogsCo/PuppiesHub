@@ -21,13 +21,11 @@ namespace PuppiesHub.ViewModels
             if (String.IsNullOrEmpty(Username) || String.IsNullOrEmpty(Password))
             {
                 await _dialogService.DisplayAlertAsync("Error", "Favor llenar todos los campos", "OK");
-
             }
 
             else
             {
                 await _navigationService.NavigateAsync("/" + NavigationConstants.Paths.MainPage);
-
             }
         }
 

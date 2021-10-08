@@ -16,16 +16,14 @@
 
             <Image Grid.Row="0" Source="doglogo" />
             <Label Grid.Row="01" FontSize="Large">Puppies Hub</Label>
-                <StackLayout Grid.Row="2" Padding="30,20">
+            <StackLayout Grid.Row="2" Padding="30,20">
 
                 <Entry
-                    x:Name="UsernameEntry"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="User"
                     Text="{Binding Username}" />
 
                 <Entry
-                    x:Name="PasswordEntry"
                     HorizontalOptions="FillAndExpand"
                     IsPassword="True"
                     Placeholder="Password"
