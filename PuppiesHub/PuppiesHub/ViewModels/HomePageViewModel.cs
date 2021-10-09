@@ -1,10 +1,8 @@
-﻿using Prism.Navigation;
+﻿using Acr.UserDialogs;
 using Prism.Services;
 using PuppiesHub.Models;
 using PuppiesHub.Services;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -20,6 +18,7 @@ namespace PuppiesHub.ViewModels
         ITheDogsApiService _theDogsApiService;
         IPageDialogService _pageDialog;
         IWishlistService _wishlistService;
+        IUserDialogs _userDialogs;
 
         async void OnRequestDog()
         {
@@ -43,19 +42,21 @@ namespace PuppiesHub.ViewModels
         async void OnCopyDogImageUrl()
         {
             await Clipboard.SetTextAsync(RandomDog.Url);
+            _userDialogs.Toast("Image link copied to Clipboard");
         }
 
-        async void OnAddToWishlist()
+        void OnAddToWishlist()
         {
             _wishlistService.AddDogToWishlist(RandomDog);
-            await _pageDialog.DisplayAlertAsync("Alert", "Added to wishlist.", "Ok");
+            _userDialogs.Toast("Dog added to Wish List");
         }
 
-        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService, IWishlistService wishlistCacheService)
+        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService, IWishlistService wishlistCacheService, IUserDialogs userDialogs)
         {
             _pageDialog = pageDialog;
             _theDogsApiService = theDogsApiService;
             _wishlistService = wishlistCacheService;
+            _userDialogs = userDialogs;
 
             RequestDogCommand = new Command(OnRequestDog);
             CopyDogUrlCommand = new Command(OnCopyDogImageUrl);
