@@ -15,13 +15,15 @@ namespace PuppiesHub.ViewModels
     {
         public ICommand RequestDogCommand { get; }
         public ICommand CopyDogUrlCommand { get; }
+        public ICommand AddToWishlistCommand { get; }
         public Dog RandomDog { get; set; }
         ITheDogsApiService _theDogsApiService;
         IPageDialogService _pageDialog;
+        IWishlistService _wishlistService;
 
         async void OnRequestDog()
         {
-            var current = Connectivity.NetworkAccess;
+            NetworkAccess current = Connectivity.NetworkAccess;
             if (current == NetworkAccess.Internet)
             {
                 List<Dog> dogs;
@@ -43,12 +45,22 @@ namespace PuppiesHub.ViewModels
             await Clipboard.SetTextAsync(RandomDog.Url);
         }
 
-        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService)
+        async void OnAddToWishlist()
+        {
+            _wishlistService.AddDogToWishlist(RandomDog);
+            await _pageDialog.DisplayAlertAsync("Alert", "Added to wishlist.", "Ok");
+        }
+
+        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService, IWishlistService wishlistCacheService)
         {
             _pageDialog = pageDialog;
             _theDogsApiService = theDogsApiService;
+            _wishlistService = wishlistCacheService;
+
             RequestDogCommand = new Command(OnRequestDog);
             CopyDogUrlCommand = new Command(OnCopyDogImageUrl);
+            AddToWishlistCommand = new Command(OnAddToWishlist);
+            OnRequestDog();
         }
     }
 }
