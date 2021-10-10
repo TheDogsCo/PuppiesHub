@@ -7,17 +7,17 @@
     xmlns:local="clr-namespace:PuppiesHub.Views"
     android:TabbedPage.ToolbarPlacement="Bottom"
     Style="{StaticResource BarStyle}">
-    <NavigationPage Title="Home">
+    <NavigationPage Title="Home" IconImageSource="doghouse">
         <x:Arguments>
             <local:HomePage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Wishlist">
+    <NavigationPage Title="Wishlist" IconImageSource="wishlist">
         <x:Arguments>
             <local:WishlistPage />
         </x:Arguments>
     </NavigationPage>
-    <NavigationPage Title="Profile">
+    <NavigationPage Title="Profile" IconImageSource="owner">
         <x:Arguments>
             <local:ProfilePage />
         </x:Arguments>

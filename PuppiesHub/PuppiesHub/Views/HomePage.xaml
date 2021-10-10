@@ -1,21 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PuppiesHub.Views.HomePage"
-             NavigationPage.HasNavigationBar="false">
+<ContentPage
+    x:Class="PuppiesHub.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="false">
 
     <StackLayout>
-        <Label Text="Puppies Hub" Style="{StaticResource LogoTextStyle}"/>
-        <Button Command="{Binding RequestDogCommand}" Text="New Dog" BackgroundColor="Coral" />
-        <Image Source="{Binding RandomDog.Url}" HeightRequest="300" />
-        <Label Text="{Binding RandomDog.Breeds[0].Name}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"  />
-        <Label Text="{Binding RandomDog.Breeds[0].LifeSpan}" FontSize="16" HorizontalTextAlignment="Center" />
-        <Label Text="{Binding RandomDog.Breeds[0].BreedGroup}" FontSize="16" HorizontalTextAlignment="Center" />
-        <Label Text="{Binding RandomDog.Breeds[0].Temperament}" FontSize="16" HorizontalTextAlignment="Center" />
+        <Label Style="{StaticResource LogoTextStyle}" Text="Puppies Hub" />
+        <Button
+            BackgroundColor="Coral"
+            Command="{Binding RequestDogCommand}"
+            Text="New Dog" />
+        <Image HeightRequest="300" Source="{Binding RandomDog.Url}" />
+        <Label
+            FontAttributes="Bold"
+            FontSize="20"
+            HorizontalTextAlignment="Center"
+            Text="{Binding RandomDog.Breeds[0].Name}" />
+        <Label
+            FontSize="16"
+            HorizontalTextAlignment="Center"
+            Text="{Binding RandomDog.Breeds[0].LifeSpan}" />
+        <Label
+            FontSize="16"
+            HorizontalTextAlignment="Center"
+            Text="{Binding RandomDog.Breeds[0].BreedGroup}" />
+        <Label
+            FontSize="16"
+            HorizontalTextAlignment="Center"
+            Text="{Binding RandomDog.Breeds[0].Temperament}" />
 
-        <StackLayout Orientation="Horizontal" Margin="20">
-            <Button Text="Copy Image" Command="{Binding CopyDogUrlCommand}" />
-            <Button Text="Add to Wishlist" HorizontalOptions="FillAndExpand" Command="{Binding AddToWishlistCommand}" />
+        <StackLayout Margin="20" Orientation="Horizontal">
+            <Button Command="{Binding CopyDogUrlCommand}" Text="Copy Image" />
+            <Button
+                Command="{Binding AddToWishlistCommand}"
+                HorizontalOptions="FillAndExpand"
+                Text="Add to Wishlist" />
         </StackLayout>
     </StackLayout>
 

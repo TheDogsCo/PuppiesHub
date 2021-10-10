@@ -20,7 +20,7 @@ namespace PuppiesHub.ViewModels
 
             if (String.IsNullOrEmpty(Username) || String.IsNullOrEmpty(Password))
             {
-                await _dialogService.DisplayAlertAsync("Error", "Favor llenar todos los campos", "OK");
+                await _dialogService.DisplayAlertAsync("Error", MessageAlertConstants.EmptyfieldError, "OK");
             }
 
             else

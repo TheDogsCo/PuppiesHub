@@ -15,25 +15,25 @@ namespace PuppiesHub.ViewModels
         public string PasswordConfirmation { get; set; }
 
         public ICommand RegisterCommand { get; }
-        private async void OnRegister() => await _navigationService.NavigateAsync(NavigationConstants.Paths.Login);
-        private async void OnLogin()
+        private async void OnRegister()
         {
 
             if (String.IsNullOrEmpty(Username) || String.IsNullOrEmpty(NewPassword) || String.IsNullOrEmpty(PasswordConfirmation))
             {
-                await _dialogService.DisplayAlertAsync("Error", "Favor llenar todos los campos", "OK");
+                await _dialogService.DisplayAlertAsync("Error", MessageAlertConstants.EmptyfieldError, "OK");
             }
+            else if(NewPassword!=PasswordConfirmation)
+            {
+                await _dialogService.DisplayAlertAsync("Error", MessageAlertConstants.PasswordNotMatching, "OK");
 
+            }
             else
             {
-                await _dialogService.DisplayAlertAsync("Bienvenido!", $"{Username}", "OK");
-                await _navigationService.NavigateAsync("/" + NavigationConstants.Paths.MainPage);
+                await _dialogService.DisplayAlertAsync("Bienvenido", $"{Username}!", "OK");
+                await _navigationService.NavigateAsync(NavigationConstants.Paths.Login);
 
             }
         }
-
-
-
 
         INavigationService _navigationService;
         IPageDialogService _dialogService;

@@ -13,7 +13,10 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="01" Style="{StaticResource LogoTextStyle}">Puppies Hub</Label>
+            <Label
+                Grid.Row="01"
+                Style="{StaticResource LogoTextStyle}"
+                Text="Puppies Hub" />
             <StackLayout Grid.Row="2" Padding="30,20">
 
                 <Entry
@@ -24,13 +27,13 @@
                 <Entry
                     HorizontalOptions="FillAndExpand"
                     IsPassword="True"
-                    Placeholder="Password"
-                    Text="{Binding Password}" />
+                    Placeholder="New Password"
+                    Text="{Binding NewPassword}" />
                 <Entry
                     HorizontalOptions="FillAndExpand"
                     IsPassword="True"
                     Placeholder="Confirm Password"
-                    Text="{Binding Password}" />
+                    Text="{Binding PasswordConfirmation}" />
 
 
                 <Button Command="{Binding RegisterCommand}" Text="Register" />

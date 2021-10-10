@@ -13,11 +13,5 @@ namespace PuppiesHub
             public const string Profile = "ProfilePage";
             public const string Register = "RegisterPage";
         }
-
-        public static class Parameters
-        {
-            //public const string Contact = "Contact";
-        }
-
     }
 }

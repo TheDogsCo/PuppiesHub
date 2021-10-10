@@ -23,8 +23,10 @@
                 <Setter Property="RowSpacing" Value="35" />
             </Style>
             <Style x:Key="BarStyle" TargetType="TabbedPage">
-                <Setter Property="BarBackgroundColor" Value="DarkOrange" />
+                <Setter Property="BarBackgroundColor" Value="Coral" />
                 <Setter Property="BarTextColor" Value="Black" />
+                <Setter Property="SelectedTabColor" Value="Black" />
+
 
             </Style>
             <Style TargetType="ContentPage">
