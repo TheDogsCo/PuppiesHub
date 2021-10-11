@@ -3,22 +3,17 @@
     x:Class="PuppiesHub.Views.WishlistPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:PuppiesHub.Views"
-    Title="Wishlist">
+    xmlns:views="clr-namespace:PuppiesHub.Views">
     <ContentPage.Content>
-        <StackLayout>
-            <AbsoluteLayout>
-                <CollectionView
-                    ItemsSource="{Binding DogsWishlist}"
-                    SelectedItem="{Binding SelectedDog}"
-                    SelectionMode="Single">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <views:WishlistItemView BindingContext="{Binding}" />
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </AbsoluteLayout>
-        </StackLayout>
+        <CollectionView
+            ItemsSource="{Binding DogsWishlist}"
+            SelectedItem="{Binding SelectedDog}"
+            SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <views:WishlistItemView BindingContext="{Binding}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>

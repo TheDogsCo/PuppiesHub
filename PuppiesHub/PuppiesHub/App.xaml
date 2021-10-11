@@ -11,7 +11,7 @@
                 <Setter Property="CornerRadius" Value="10" />
             </Style>
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
@@ -21,11 +21,11 @@
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="Padding" Value="0, 20, 0, 20" />
             </Style>
-            <Style TargetType="Grid">
-                <Setter Property="VerticalOptions" Value="Center" />
+            <Style x:Key="HomeGrid" TargetType="Grid">
+                <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="Padding" Value="20" />
-                <Setter Property="ColumnSpacing" Value="20" />
-                <Setter Property="RowSpacing" Value="35" />
+                <Setter Property="ColumnSpacing" Value="5" />
+                <Setter Property="RowSpacing" Value="5" />
             </Style>
             <Style x:Key="BarStyle" TargetType="TabbedPage">
                 <Setter Property="BarBackgroundColor" Value="Coral" />
