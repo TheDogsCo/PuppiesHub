@@ -17,7 +17,7 @@ namespace PuppiesHub.ViewModels
         public Dog RandomDog { get; set; }
         ITheDogsApiService _theDogsApiService;
         IPageDialogService _pageDialog;
-        IWishlistService _wishlistService;
+        IWishListService _wishlistService;
         IUserDialogs _userDialogs;
 
         async void OnRequestDog()
@@ -51,7 +51,7 @@ namespace PuppiesHub.ViewModels
             _userDialogs.Toast("Dog added to Wish List");
         }
 
-        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService, IWishlistService wishlistCacheService, IUserDialogs userDialogs)
+        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService, IWishListService wishlistCacheService, IUserDialogs userDialogs)
         {
             _pageDialog = pageDialog;
             _theDogsApiService = theDogsApiService;

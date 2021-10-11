@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PuppiesHub.Services
 {
-    public interface IWishlistService
+    public interface IWishListService
     {
         ObservableCollection <Dog> GetDogWishlist();
         void AddDogToWishlist(Dog dog);

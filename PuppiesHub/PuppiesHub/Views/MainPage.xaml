@@ -14,7 +14,7 @@
     </NavigationPage>
     <NavigationPage Title="Wishlist" IconImageSource="wishlist">
         <x:Arguments>
-            <local:WishlistPage />
+            <local:WishListPage />
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="Profile" IconImageSource="owner">

@@ -9,9 +9,9 @@ using Xamarin.Forms;
 
 namespace PuppiesHub.ViewModels
 {
-    class WishlistPageViewModel: BaseViewModel
+    class WishListPageViewModel: BaseViewModel
     {
-        public ICommand SelectDogCommand { get; } 
+        public ICommand SelectDogCommand { get; }
         public ObservableCollection<Dog> DogsWishlist { get; set; }
 
         private Dog _selectedDog;
@@ -34,7 +34,7 @@ namespace PuppiesHub.ViewModels
             throw new NotImplementedException();
         }
 
-        public WishlistPageViewModel(IWishlistService wishlistService)
+        public WishListPageViewModel(IWishListService wishlistService)
         {
             DogsWishlist = wishlistService.GetDogWishlist();
             SelectDogCommand = new Command<Dog>(OnSelectDog);

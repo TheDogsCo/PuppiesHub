@@ -11,7 +11,7 @@ namespace PuppiesHub
 {
     public partial class App : PrismApplication
     {
-        static IWishlistService wishlistService = new WishlistService();
+        static IWishListService wishListService = new WishListService();
         public App(IPlatformInitializer platformInitializer): base(platformInitializer)
         {
 
@@ -26,14 +26,14 @@ namespace PuppiesHub
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<ITheDogsApiService, TheDogsApiService>();
-            containerRegistry.RegisterInstance<IWishlistService>(wishlistService);
+            containerRegistry.RegisterInstance<IWishListService>(wishListService);
             containerRegistry.RegisterInstance<IUserDialogs>(UserDialogs.Instance);
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>(NavigationConstants.Paths.MainPage);
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>(NavigationConstants.Paths.Login);
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>(NavigationConstants.Paths.Register);
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>(NavigationConstants.Paths.Home);
-            containerRegistry.RegisterForNavigation<WishlistPage, WishlistPageViewModel>(NavigationConstants.Paths.Wishlist);
+            containerRegistry.RegisterForNavigation<WishListPage, WishListPageViewModel>(NavigationConstants.Paths.Wishlist);
             containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>(NavigationConstants.Paths.Profile);
         }
 

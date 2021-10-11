@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace PuppiesHub.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WishlistItemView : ContentView
+    public partial class WishListItemView : ContentView
     {
-        public WishlistItemView()
+        public WishListItemView()
         {
             InitializeComponent();
         }

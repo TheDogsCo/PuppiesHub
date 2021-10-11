@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace PuppiesHub.Services
 {
-    class WishlistService : IWishlistService
+    class WishListService : IWishListService
     {
 
         private ObservableCollection<Dog> _dogsWishlist;
 
-        public WishlistService()
+        public WishListService()
         {
             _dogsWishlist = new ObservableCollection<Dog>();
         }
