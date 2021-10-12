@@ -32,7 +32,13 @@
 
                 <Button Command="{Binding LoginCommand}" Text="Login" />
 
-                <Button Command="{Binding RegisterCommand}" Text="Register" />
+                <Button
+                    Margin="0,100,0,0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Coral"
+                    BorderWidth="2"
+                    Command="{Binding RegisterCommand}"
+                    Text="Register" />
 
 
             </StackLayout>

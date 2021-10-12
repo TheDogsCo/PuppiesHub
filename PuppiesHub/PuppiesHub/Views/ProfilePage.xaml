@@ -6,11 +6,15 @@
     NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Profile"
-                VerticalOptions="CenterAndExpand" />
-            <Button Command="{Binding LogoutCommand}" Text="Log out" />
+            <Image
+                Margin="20,40,20,30"
+                HorizontalOptions="Center"
+                Source="profile"
+                VerticalOptions="Start" />
+            <Button
+                Margin="20,200,20,30"
+                Command="{Binding LogoutCommand}"
+                Text="Log out" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
