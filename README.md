@@ -10,10 +10,11 @@ https://balsamiq.cloud/suzndvj/p6hub9/r2278
 https://trello.com/b/DYip8kiN/cute-puppies
 
 4-Screenshots de cada pantalla o Gif
-![screenshot](?)
-![screenshot](?)
-![screenshot](?)
-![screenshot](?)
+![screenshot](https://github.com/TheDogsCo/PuppiesHub/blob/master/screenshots/a.jpg?)
+![screenshot](https://github.com/TheDogsCo/PuppiesHub/blob/master/screenshots/b.jpg?)
+![screenshot](https://github.com/TheDogsCo/PuppiesHub/blob/master/screenshots/c.jpg?)
+![screenshot](https://github.com/TheDogsCo/PuppiesHub/blob/master/screenshots/d.jpg?)
+![screenshot](https://github.com/TheDogsCo/PuppiesHub/blob/master/screenshots/e.jpg?)
 
 5-Miembros del equipo (Nombre + ID)
 Cesar Lopez
