@@ -16,7 +16,6 @@ namespace PuppiesHub.ViewModels
         public ICommand AddToWishListCommand { get; }
         public Dog RandomDog { get; set; }
         ITheDogsApiService _theDogsApiService;
-        IPageDialogService _pageDialog;
         IWishListService _wishListService;
         IUserDialogs _userDialogs;
 
@@ -35,25 +34,24 @@ namespace PuppiesHub.ViewModels
             }
             else
             {
-                await _pageDialog.DisplayAlertAsync("Alert", "No Internet Connection.", "Ok");
+                await _userDialogs.AlertAsync(MessageAlertConstants.NoInternetConnection);
             }
         }
 
         async void OnCopyDogImageUrl()
         {
             await Clipboard.SetTextAsync(RandomDog.Url);
-            _userDialogs.Toast("Image link copied to Clipboard");
+            _userDialogs.Toast(MessageAlertConstants.ImageCopiedToClipboard);
         }
 
         void OnAddToWishList()
         {
             _wishListService.AddDogToWishlist(RandomDog);
-            _userDialogs.Toast("Dog added to Wish List");
+            _userDialogs.Toast(MessageAlertConstants.AddedToWishList);
         }
 
-        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService, IWishListService wishListService, IUserDialogs userDialogs)
+        public HomePageViewModel(ITheDogsApiService theDogsApiService, IWishListService wishListService, IUserDialogs userDialogs)
         {
-            _pageDialog = pageDialog;
             _theDogsApiService = theDogsApiService;
             _wishListService = wishListService;
             _userDialogs = userDialogs;

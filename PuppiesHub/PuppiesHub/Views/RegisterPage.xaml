@@ -35,10 +35,7 @@
                     Placeholder="Confirm Password"
                     Text="{Binding PasswordConfirmation}" />
 
-
                 <Button Command="{Binding RegisterCommand}" Text="Register" />
-
-
             </StackLayout>
         </Grid>
     </ContentPage.Content>

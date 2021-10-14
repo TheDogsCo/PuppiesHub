@@ -54,6 +54,15 @@
             FontSize="12"
             HorizontalTextAlignment="Center"
             Text="{Binding SelectedDog.Breeds[0].Temperament}" />
+        <Button
+            Grid.Row="5"
+            Grid.ColumnSpan="2"
+            Margin="10,0,10,10"
+            BackgroundColor="Transparent"
+            BorderColor="Coral"
+            BorderWidth="2"
+            Command="{Binding RemoveFromWishListCommand}"
+            Text="Remove from Wish List" />
 
     </Grid>
 </ContentPage>

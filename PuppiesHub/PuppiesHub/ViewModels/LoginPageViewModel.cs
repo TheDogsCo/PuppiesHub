@@ -15,22 +15,19 @@ namespace PuppiesHub.ViewModels
         public ICommand RegisterCommand { get; }
         public ICommand LoginCommand { get; }
         private async void OnRegister() => await _navigationService.NavigateAsync(NavigationConstants.Paths.Register);
-        private async void OnLogin() 
+        private async void OnLogin()
         {
 
-            if (String.IsNullOrEmpty(Username) || String.IsNullOrEmpty(Password))
+            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
             {
                 await _dialogService.DisplayAlertAsync("Error", MessageAlertConstants.EmptyfieldError, "OK");
             }
 
             else
             {
-                await _navigationService.NavigateAsync("/" + NavigationConstants.Paths.MainPage);
+                await _navigationService.NavigateAsync($"/{NavigationConstants.Paths.MainPage}");
             }
         }
-
-
-
 
         INavigationService _navigationService;
         IPageDialogService _dialogService;

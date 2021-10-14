@@ -33,7 +33,7 @@ namespace PuppiesHub.ViewModels
 
         private void OnSelectDog(Dog dog)
         {
-            var parameter = new NavigationParameters();
+            NavigationParameters parameter = new NavigationParameters();
             parameter.Add("dog", dog);
             _navigationService.NavigateAsync(NavigationConstants.Paths.WishListDetail, parameter);
         }

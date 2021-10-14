@@ -19,7 +19,7 @@ namespace PuppiesHub.ViewModels
         void OnRemoveFromWishList()
         {
             _wishListService.AddDogToWishlist(SelectedDog);
-            _userDialogs.Toast("Dog removed from Wish List");
+            _userDialogs.Toast(MessageAlertConstants.RemovedFromWishList);
         }
 
         public WishListDetailPageViewModel(IWishListService wishListService, IUserDialogs userDialogs)
