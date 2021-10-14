@@ -9,9 +9,9 @@ namespace PuppiesHub.Services
 {
     public interface IWishListService
     {
-        ObservableCollection <Dog> GetDogWishlist();
-        void AddDogToWishlist(Dog dog);
-        void RemoveDogFromWishlist(string dogId);
+        ObservableCollection <Dog> GetDogWishList();
+        bool AddDogToWishList(Dog dog);
+        bool RemoveDogFromWishList(Dog dog);
 
     }
 }

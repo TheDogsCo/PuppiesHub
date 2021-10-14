@@ -41,7 +41,7 @@ namespace PuppiesHub.ViewModels
         public WishListPageViewModel(INavigationService navigationService, IWishListService wishlistService)
         {
             _navigationService = navigationService;
-            DogsWishList = wishlistService.GetDogWishlist();
+            DogsWishList = wishlistService.GetDogWishList();
             SelectDogCommand = new Command<Dog>(OnSelectDog);
         }
 

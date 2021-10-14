@@ -46,8 +46,15 @@ namespace PuppiesHub.ViewModels
 
         void OnAddToWishList()
         {
-            _wishListService.AddDogToWishlist(RandomDog);
-            _userDialogs.Toast(MessageAlertConstants.AddedToWishList);
+            var wasAdded = _wishListService.AddDogToWishList(RandomDog);
+            if (wasAdded)
+            {
+                _userDialogs.Toast(MessageAlertConstants.AddedToWishList);
+            } else
+            {
+                _userDialogs.Toast(MessageAlertConstants.AlreadyOnWishList);
+            }
+
         }
 
         public HomePageViewModel(ITheDogsApiService theDogsApiService, IWishListService wishListService, IUserDialogs userDialogs)

@@ -27,7 +27,7 @@
                 <Entry
                     HorizontalOptions="FillAndExpand"
                     IsPassword="True"
-                    Placeholder="New Password"
+                    Placeholder="Password"
                     Text="{Binding NewPassword}" />
                 <Entry
                     HorizontalOptions="FillAndExpand"

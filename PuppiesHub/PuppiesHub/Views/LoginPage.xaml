@@ -40,8 +40,6 @@
                     Style="{StaticResource OutlineButtonStyle}"
                     Command="{Binding RegisterCommand}"
                     Text="Register" />
-
-
             </StackLayout>
         </Grid>
     </ContentPage.Content>

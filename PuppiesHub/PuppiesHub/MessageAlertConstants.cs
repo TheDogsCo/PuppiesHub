@@ -11,6 +11,7 @@ namespace PuppiesHub
         public static string NoInternetConnection = "No Internet Connection.";
         public static string ImageCopiedToClipboard = "Image link copied to Clipboard.";
         public static string AddedToWishList = "Dog added to Wish List.";
+        public static string AlreadyOnWishList = "Dog is already on Wish List.";
         public static string RemovedFromWishList = "Dog removed from Wish List";
     }
 }

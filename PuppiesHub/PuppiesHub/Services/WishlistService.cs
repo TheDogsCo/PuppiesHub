@@ -11,25 +11,35 @@ namespace PuppiesHub.Services
     class WishListService : IWishListService
     {
 
-        private ObservableCollection<Dog> _dogsWishlist;
+        private ObservableCollection<Dog> _dogsWishList;
 
         public WishListService()
         {
-            _dogsWishlist = new ObservableCollection<Dog>();
+            _dogsWishList = new ObservableCollection<Dog>();
         }
-        public void AddDogToWishlist(Dog dog)
+        public bool AddDogToWishList(Dog dog)
         {
-            _dogsWishlist.Add(dog);
+            if (!_dogsWishList.Contains(dog))
+            {
+                _dogsWishList.Add(dog);
+                return true;
+            }
+            return false;
         }
 
-        public ObservableCollection<Dog> GetDogWishlist()
+        public ObservableCollection<Dog> GetDogWishList()
         {
-            return _dogsWishlist;
+            return _dogsWishList;
         }
 
-        public void RemoveDogFromWishlist(string dogId)
+        public bool RemoveDogFromWishList(Dog dog)
         {
-            throw new NotImplementedException();
+            if (_dogsWishList.Contains(dog))
+            {
+                _dogsWishList.Remove(dog);
+                return true;
+            }
+            return false;
         }
     }
 }
