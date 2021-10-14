@@ -17,15 +17,15 @@
             Grid.Column="0"
             Aspect="AspectFill"
             HeightRequest="60"
-            Source="{Binding Url}"
             VerticalOptions="Center"
-            WidthRequest="60" />
+            WidthRequest="60"
+            Source="{Binding Url}" />
         <Label
             Grid.Row="0"
             Grid.RowSpan="2"
             Grid.Column="1"
-            Text="{Binding Breeds[0].Name}"
-            TextColor="Black"
-            VerticalOptions="Center" />
+            Margin="15,0,0,0"
+            VerticalOptions="Center" 
+            Text="{Binding Breeds[0].Name}" />
     </Grid>
 </ContentView>

@@ -34,32 +34,21 @@
         <ImageButton
             Grid.Row="1"
             Grid.Column="0"
-            Padding="10"
-            BackgroundColor="Transparent"
-            BorderColor="Coral"
-            BorderWidth="2"
+            Style="{StaticResource OutlineImageButtonStyle}"
             Command="{Binding CopyDogUrlCommand}"
             CornerRadius="10"
-            HorizontalOptions="Center"
             Source="copy" />
         <ImageButton
             Grid.Row="1"
             Grid.Column="1"
-            Padding="10"
-            BackgroundColor="Transparent"
-            BorderColor="Coral"
-            BorderWidth="2"
+            Style="{StaticResource OutlineImageButtonStyle}"
             Command="{Binding AddToWishListCommand}"
             CornerRadius="100"
-            HorizontalOptions="Center"
             Source="star" />
         <Label
             Grid.Row="2"
             Grid.ColumnSpan="2"
-            BackgroundColor="AntiqueWhite"
-            FontAttributes="Bold"
-            FontSize="20"
-            HorizontalTextAlignment="Center"
+            Style="{StaticResource BreedNameLabelStyle}"
             Text="{Binding RandomDog.Breeds[0].Name}" />
         <Label
             Grid.Row="3"
@@ -86,9 +75,7 @@
             Grid.Row="5"
             Grid.ColumnSpan="2"
             Margin="10,0,10,10"
-            BackgroundColor="Transparent"
-            BorderColor="Coral"
-            BorderWidth="2"
+            Style="{StaticResource OutlineButtonStyle}"
             Command="{Binding RequestDogCommand}"
             Text="New Dog" />
 

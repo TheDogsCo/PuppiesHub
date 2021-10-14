@@ -10,17 +10,6 @@
                 <Setter Property="BackgroundColor" Value="LightGray" />
                 <Setter Property="CornerRadius" Value="10" />
             </Style>
-            <Style TargetType="Label">
-                <Setter Property="FontSize" Value="Medium" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="TextColor" Value="Black" />
-            </Style>
-            <Style x:Key="LogoTextStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="Large" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="Padding" Value="0, 20, 0, 20" />
-            </Style>
             <Style x:Key="HomeGrid" TargetType="Grid">
                 <Setter Property="VerticalOptions" Value="Start" />
                 <Setter Property="Padding" Value="20" />
@@ -39,15 +28,40 @@
                 <Setter Property="BarBackgroundColor" Value="FloralWhite" />
                 <Setter Property="BarTextColor" Value="Black" />
             </Style>
+            
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Coral" />
                 <Setter Property="CornerRadius" Value="10" />
                 <Setter Property="Padding" Value="20, 0, 20, 0" />
                 <Setter Property="Margin" Value="10, 0, 10, 0" />
-
             </Style>
-
-
+            <Style x:Key="OutlineButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="Coral" />
+                <Setter Property="BorderWidth" Value="2" />
+            </Style>
+            <Style x:Key="OutlineImageButtonStyle" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="Coral" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+            
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="BreedNameLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="AntiqueWhite" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

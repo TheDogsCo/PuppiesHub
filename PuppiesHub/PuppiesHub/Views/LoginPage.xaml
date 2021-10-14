@@ -15,7 +15,10 @@
             </Grid.RowDefinitions>
 
             <Image Grid.Row="0" Source="doglogo" />
-            <Label Grid.Row="01" Style="{StaticResource LogoTextStyle}">Puppies Hub</Label>
+            <Label Grid.Row="01" 
+                   Style="{StaticResource TitleLabelStyle}" 
+                   Padding="0, 20, 0, 20" 
+                   Text="Puppies Hub" />
             <StackLayout Grid.Row="2" Padding="30,20">
 
                 <Entry
@@ -34,9 +37,7 @@
 
                 <Button
                     Margin="0,100,0,0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Coral"
-                    BorderWidth="2"
+                    Style="{StaticResource OutlineButtonStyle}"
                     Command="{Binding RegisterCommand}"
                     Text="Register" />
 

@@ -7,12 +7,9 @@
 
     <NavigationPage.TitleView>
         <Label
+            Style="{StaticResource TitleLabelStyle}"
             Margin="0,5,0,0"
-            BackgroundColor="White"
-            FontAttributes="Bold"
-            FontSize="30"
-            HorizontalTextAlignment="Center"
-            Text="Wishlist" />
+            Text="Wish List" />
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
