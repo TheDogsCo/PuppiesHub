@@ -17,7 +17,7 @@
 
     <ContentPage.Content>
         <CollectionView
-            ItemsSource="{Binding DogsWishlist}"
+            ItemsSource="{Binding DogsWishList}"
             SelectedItem="{Binding SelectedDog}"
             SelectionMode="Single">
             <CollectionView.ItemTemplate>

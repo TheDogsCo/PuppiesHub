@@ -20,7 +20,7 @@ namespace PuppiesHub
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync(NavigationConstants.Paths.Login);
+            NavigationService.NavigateAsync($"/NavigationPage/{NavigationConstants.Paths.Login}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -33,7 +33,8 @@ namespace PuppiesHub
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>(NavigationConstants.Paths.Login);
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>(NavigationConstants.Paths.Register);
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>(NavigationConstants.Paths.Home);
-            containerRegistry.RegisterForNavigation<WishListPage, WishListPageViewModel>(NavigationConstants.Paths.Wishlist);
+            containerRegistry.RegisterForNavigation<WishListPage, WishListPageViewModel>(NavigationConstants.Paths.WishList);
+            containerRegistry.RegisterForNavigation<WishListDetailPage, WishListDetailPageViewModel>(NavigationConstants.Paths.WishListDetail);
             containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>(NavigationConstants.Paths.Profile);
         }
 

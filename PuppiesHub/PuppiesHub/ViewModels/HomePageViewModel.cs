@@ -13,11 +13,11 @@ namespace PuppiesHub.ViewModels
     {
         public ICommand RequestDogCommand { get; }
         public ICommand CopyDogUrlCommand { get; }
-        public ICommand AddToWishlistCommand { get; }
+        public ICommand AddToWishListCommand { get; }
         public Dog RandomDog { get; set; }
         ITheDogsApiService _theDogsApiService;
         IPageDialogService _pageDialog;
-        IWishListService _wishlistService;
+        IWishListService _wishListService;
         IUserDialogs _userDialogs;
 
         async void OnRequestDog()
@@ -45,22 +45,22 @@ namespace PuppiesHub.ViewModels
             _userDialogs.Toast("Image link copied to Clipboard");
         }
 
-        void OnAddToWishlist()
+        void OnAddToWishList()
         {
-            _wishlistService.AddDogToWishlist(RandomDog);
+            _wishListService.AddDogToWishlist(RandomDog);
             _userDialogs.Toast("Dog added to Wish List");
         }
 
-        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService, IWishListService wishlistCacheService, IUserDialogs userDialogs)
+        public HomePageViewModel(IPageDialogService pageDialog, ITheDogsApiService theDogsApiService, IWishListService wishListService, IUserDialogs userDialogs)
         {
             _pageDialog = pageDialog;
             _theDogsApiService = theDogsApiService;
-            _wishlistService = wishlistCacheService;
+            _wishListService = wishListService;
             _userDialogs = userDialogs;
 
             RequestDogCommand = new Command(OnRequestDog);
             CopyDogUrlCommand = new Command(OnCopyDogImageUrl);
-            AddToWishlistCommand = new Command(OnAddToWishlist);
+            AddToWishListCommand = new Command(OnAddToWishList);
             OnRequestDog();
         }
     }

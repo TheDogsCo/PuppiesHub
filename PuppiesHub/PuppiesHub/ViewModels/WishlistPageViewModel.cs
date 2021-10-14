@@ -1,4 +1,5 @@
-﻿using PuppiesHub.Models;
+﻿using Prism.Navigation;
+using PuppiesHub.Models;
 using PuppiesHub.Services;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,8 @@ namespace PuppiesHub.ViewModels
     class WishListPageViewModel: BaseViewModel
     {
         public ICommand SelectDogCommand { get; }
-        public ObservableCollection<Dog> DogsWishlist { get; set; }
+        public ObservableCollection<Dog> DogsWishList { get; set; }
+        INavigationService _navigationService;
 
         private Dog _selectedDog;
         public Dog SelectedDog
@@ -31,12 +33,15 @@ namespace PuppiesHub.ViewModels
 
         private void OnSelectDog(Dog dog)
         {
-            throw new NotImplementedException();
+            var parameter = new NavigationParameters();
+            parameter.Add("dog", dog);
+            _navigationService.NavigateAsync(NavigationConstants.Paths.WishListDetail, parameter);
         }
 
-        public WishListPageViewModel(IWishListService wishlistService)
+        public WishListPageViewModel(INavigationService navigationService, IWishListService wishlistService)
         {
-            DogsWishlist = wishlistService.GetDogWishlist();
+            _navigationService = navigationService;
+            DogsWishList = wishlistService.GetDogWishlist();
             SelectDogCommand = new Command<Dog>(OnSelectDog);
         }
 

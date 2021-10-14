@@ -9,7 +9,8 @@ namespace PuppiesHub
             public const string Home = "Home";
             public const string Login = "LoginPage";
             public const string MainPage = "MainPage";
-            public const string Wishlist = "WishlistPage";
+            public const string WishList = "WishListPage";
+            public const string WishListDetail = "WishListDetailPage";
             public const string Profile = "ProfilePage";
             public const string Register = "RegisterPage";
         }

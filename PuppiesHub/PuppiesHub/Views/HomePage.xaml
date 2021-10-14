@@ -49,7 +49,7 @@
             BackgroundColor="Transparent"
             BorderColor="Coral"
             BorderWidth="2"
-            Command="{Binding AddToWishlistCommand}"
+            Command="{Binding AddToWishListCommand}"
             CornerRadius="100"
             HorizontalOptions="Center"
             Source="star" />

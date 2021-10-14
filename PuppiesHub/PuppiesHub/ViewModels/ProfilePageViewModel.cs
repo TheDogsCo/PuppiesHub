@@ -9,7 +9,7 @@ namespace PuppiesHub.ViewModels
     class ProfilePageViewModel: BaseViewModel
     {
         public ICommand LogoutCommand { get; }
-        private async void OnLogout() => await _navigationService.NavigateAsync("/NavigationPage/" + NavigationConstants.Paths.Login);
+        private async void OnLogout() => await _navigationService.NavigateAsync($"/NavigationPage/{NavigationConstants.Paths.Login}");
 
         INavigationService _navigationService;
 
