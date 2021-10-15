@@ -4,7 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-        <StackLayout Grid.Row="2" Padding="30,20">
+        <StackLayout Padding="30,20">
             <Image Source="doglogo" />
             <Label
                 Padding="0,20,0,20"
