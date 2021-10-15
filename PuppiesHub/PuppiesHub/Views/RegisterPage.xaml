@@ -4,39 +4,28 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-
+        <StackLayout Grid.Row="2" Padding="30,20">
             <Label
                 Grid.Row="01"
                 Style="{StaticResource LogoTextStyle}"
                 Text="Puppies Hub" />
-            <StackLayout Grid.Row="2" Padding="30,20">
+            <Entry
+                HorizontalOptions="FillAndExpand"
+                Placeholder="User"
+                Text="{Binding Username}" />
 
-                <Entry
-                    HorizontalOptions="FillAndExpand"
-                    Placeholder="User"
-                    Text="{Binding Username}" />
+            <Entry
+                HorizontalOptions="FillAndExpand"
+                IsPassword="True"
+                Placeholder="Password"
+                Text="{Binding NewPassword}" />
+            <Entry
+                HorizontalOptions="FillAndExpand"
+                IsPassword="True"
+                Placeholder="Confirm Password"
+                Text="{Binding PasswordConfirmation}" />
 
-                <Entry
-                    HorizontalOptions="FillAndExpand"
-                    IsPassword="True"
-                    Placeholder="Password"
-                    Text="{Binding NewPassword}" />
-                <Entry
-                    HorizontalOptions="FillAndExpand"
-                    IsPassword="True"
-                    Placeholder="Confirm Password"
-                    Text="{Binding PasswordConfirmation}" />
-
-                <Button Command="{Binding RegisterCommand}" Text="Register" />
-            </StackLayout>
-        </Grid>
+            <Button Command="{Binding RegisterCommand}" Text="Register" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

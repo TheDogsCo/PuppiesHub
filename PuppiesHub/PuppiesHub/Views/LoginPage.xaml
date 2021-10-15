@@ -4,43 +4,31 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
+        <StackLayout Grid.Row="2" Padding="30,20">
+            <Image Source="doglogo" />
+            <Label
+                Padding="0,20,0,20"
+                Style="{StaticResource TitleLabelStyle}"
+                Text="Puppies Hub" />
+            <Entry
+                HorizontalOptions="FillAndExpand"
+                Placeholder="User"
+                Text="{Binding Username}" />
+
+            <Entry
+                HorizontalOptions="FillAndExpand"
+                IsPassword="True"
+                Placeholder="Password"
+                Text="{Binding Password}" />
 
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+            <Button Command="{Binding LoginCommand}" Text="Login" />
 
-            <Image Grid.Row="0" Source="doglogo" />
-            <Label Grid.Row="01" 
-                   Style="{StaticResource TitleLabelStyle}" 
-                   Padding="0, 20, 0, 20" 
-                   Text="Puppies Hub" />
-            <StackLayout Grid.Row="2" Padding="30,20">
-
-                <Entry
-                    HorizontalOptions="FillAndExpand"
-                    Placeholder="User"
-                    Text="{Binding Username}" />
-
-                <Entry
-                    HorizontalOptions="FillAndExpand"
-                    IsPassword="True"
-                    Placeholder="Password"
-                    Text="{Binding Password}" />
-
-
-                <Button Command="{Binding LoginCommand}" Text="Login" />
-
-                <Button
-                    Margin="0,100,0,0"
-                    Style="{StaticResource OutlineButtonStyle}"
-                    Command="{Binding RegisterCommand}"
-                    Text="Register" />
-            </StackLayout>
-        </Grid>
+            <Button
+                Margin="0,100,0,0"
+                Command="{Binding RegisterCommand}"
+                Style="{StaticResource OutlineButtonStyle}"
+                Text="Register" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

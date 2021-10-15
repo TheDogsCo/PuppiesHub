@@ -14,7 +14,11 @@ namespace PuppiesHub.ViewModels
         public string Password { get; set; }
         public ICommand RegisterCommand { get; }
         public ICommand LoginCommand { get; }
-        private async void OnRegister() => await _navigationService.NavigateAsync(NavigationConstants.Paths.Register);
+        private async void OnRegister()
+        {
+            await _navigationService.NavigateAsync(NavigationConstants.Paths.Register);
+        }
+
         private async void OnLogin()
         {
 
